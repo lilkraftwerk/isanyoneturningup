@@ -1,7 +1,21 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+function initialize() {
+    var mapOptions = {
+        center: new google.maps.LatLng(-34.397, 150.644),
+        zoom: 2
+    };
+    map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+}
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-});
+google.maps.event.addDomListener(window, 'load', initialize);
+image = 'turnip.png';
+
+function placeMarker(position, title) {
+    var marker = new google.maps.Marker({
+        position: position,
+        map: map,
+        animation: google.maps.Animation.DROP,
+        icon: image,
+        title: title
+    });
+}
