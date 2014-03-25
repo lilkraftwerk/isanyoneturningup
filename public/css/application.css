@@ -1,5 +1,6 @@
 body {
-
+  background-color: black;
+  background-image:url('/stardust.png');
 }
 
 .container {
@@ -28,6 +29,7 @@ th {
 }
 
 #content {
+  margin-top: 10px;
   margin-left:  40%;
 }
 #navbar {
@@ -72,14 +74,12 @@ th {
   text-align:center;
   text-shadow:1px 1px 0px #c70067;
 }
-#turnup:h
-margin-top: 20px;over {
+#turnup:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0) );
   background:-moz-linear-gradient( center top, #ef027d 5%, #ff5bb0 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0');
   background-color:#ef027d;
-}#turnup:a
-margin-top: 20px;ctive {
+}#turnup:a{
   position:relative;
   top:1px;
 }
@@ -91,4 +91,5 @@ margin-top: 20px;ctive {
   position:absolute;
   bottom:0;
   left:0;
+
 }
