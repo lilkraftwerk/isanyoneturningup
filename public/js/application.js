@@ -1,3 +1,10 @@
+$(document).ready(function() {
+    $(document).on('click', '#turnup', function() {
+        placeTurnup();
+        getTweet();
+    })
+});
+
 function initialize() {
     var mapOptions = {
         center: new google.maps.LatLng(-34.397, 150.644),
@@ -19,3 +26,23 @@ function placeMarker(position, title) {
         title: title
     });
 }
+
+function placeTurnup() {
+
+}
+
+function getTweet() {
+    $.ajax({
+        url: '/tweet',
+        type: 'get',
+        datatype: 'json'
+    }).done(function(tweet) {
+        var jaySon = JSON.parse(tweet);
+        var myCatlng = new google.maps.LatLng(parseFloat(jaySon.tweet.lat), parseFloat(jaySon.tweet.long));
+        console.log(parseFloat(jaySon.tweet.lat));
+        console.log(parseFloat(jaySon.tweet.long));
+        console.log("here here here");
+        console.log(myCatlng);
+        placeMarker(myCatlng, "hi");
+    })
+};

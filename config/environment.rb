@@ -14,6 +14,8 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'twitter'
+require 'tweetstream'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -33,6 +35,7 @@ configure do
   enable :sessions
   set :session_secret, ENV['SESSION_SECRET'] || 'this is a secret shhhhh'
 
+  CONFIG = YAML.load_file("./config/config.yaml")  # Set the views to
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
