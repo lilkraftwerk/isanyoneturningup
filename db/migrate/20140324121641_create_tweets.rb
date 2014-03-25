@@ -6,6 +6,7 @@ class CreateTweets < ActiveRecord::Migration
       t.string :long
       t.string :lat
       t.string :coords
+      t.text :url
       t.timestamps
     end
   end
