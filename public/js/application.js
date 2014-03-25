@@ -33,6 +33,7 @@ function placeTurnup(marker, content) {
         content: content
     });
     console.log(infowindow);
+    $("#tweetbox").html(content);
     google.maps.event.addListener(marker, 'click', function() {
         console.log("sup");
         $("#tweetbox").html(content);
