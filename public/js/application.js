@@ -7,7 +7,7 @@ $(document).ready(function() {
 function initialize() {
     var mapOptions = {
         center: new google.maps.LatLng(-34.397, 150.644),
-        zoom: 2
+        zoom: 4
     };
     map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
@@ -24,6 +24,7 @@ function placeMarker(position, title) {
         icon: image,
         title: title
     });
+    map.panTo(position);
     return marker;
 }
 
@@ -33,7 +34,8 @@ function placeTurnup(marker, content) {
     });
     console.log(infowindow);
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map, marker);
+        console.log("sup");
+        $("#tweetbox").html(content);
     });
 }
 
