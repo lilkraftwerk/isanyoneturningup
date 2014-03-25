@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $(document).on('click', '#turnup', function() {
-        placeTurnup();
         getTweet();
     })
 });
@@ -25,10 +24,17 @@ function placeMarker(position, title) {
         icon: image,
         title: title
     });
+    return marker;
 }
 
-function placeTurnup() {
-
+function placeTurnup(marker, content) {
+    var infowindow = new google.maps.InfoWindow({
+        content: content
+    });
+    console.log(infowindow);
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
 }
 
 function getTweet() {
@@ -39,10 +45,7 @@ function getTweet() {
     }).done(function(tweet) {
         var jaySon = JSON.parse(tweet);
         var myCatlng = new google.maps.LatLng(parseFloat(jaySon.tweet.lat), parseFloat(jaySon.tweet.long));
-        console.log(parseFloat(jaySon.tweet.lat));
-        console.log(parseFloat(jaySon.tweet.long));
-        console.log("here here here");
-        console.log(myCatlng);
-        placeMarker(myCatlng, "hi");
+        var newMarker = placeMarker(myCatlng, "hi");
+        placeTurnup(newMarker, jaySon.tweet.content);
     })
 };
