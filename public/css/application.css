@@ -3,12 +3,6 @@ body {
   background-image:url('/stardust.png');
 }
 
-.container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
 
 th {
   text-align: left;
@@ -17,6 +11,10 @@ th {
 #controls{
   width: 50%;
   margin: 0 auto;
+}
+
+#soundcloud {
+  margin: 30px;
 }
 
 #map-canvas{
