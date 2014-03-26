@@ -36,14 +36,12 @@ function placeMarker(position, title) {
 }
 
 function placeTurnup(marker, content) {
-    var infowindow = new google.maps.InfoWindow({
-        content: content
-    });
-    console.log(infowindow);
-    $("#tweetbox").html(content);
+    // $("#tweetbox").hide().html(content).delay(1000).fadeIn("fast");
+    // $("#tweetbox").html(content).delay(1000);
+    // $("#tweetbox").fadeIn('fast');
     google.maps.event.addListener(marker, 'click', function() {
-        console.log("sup");
         $("#tweetbox").html(content);
+
     });
 }
 
@@ -57,8 +55,13 @@ function getTweet() {
     })
 };
 
+function placeContent(content) {
+    $("#tweetbox").hide().html(content).fadeIn("slow");
+}
+
 function doTweet(tweet) {
     var jaySon = JSON.parse(tweet);
+    placeContent(jaySon.tweet.content);
     var myCatlng = new google.maps.LatLng(parseFloat(jaySon.tweet.lat), parseFloat(jaySon.tweet.long));
     var newMarker = placeMarker(myCatlng, "hi");
     placeTurnup(newMarker, jaySon.tweet.content);
@@ -74,7 +77,7 @@ function turntLoop() {
 
         looping = setInterval(function() {
             getTweet()
-        }, 4000);
+        }, 5000);
     } else {
         $('#turnloop').html("start loop");
         window.clearInterval(looping);

@@ -64,7 +64,6 @@ get '/getmore' do
         )
     end
   end
-  "hi"
 end
 
 get '/tweet' do
