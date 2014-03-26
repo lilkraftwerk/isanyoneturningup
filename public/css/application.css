@@ -14,6 +14,17 @@ th {
 }
 
 
+.center {
+width: 75%;
+margin: 10px auto 10px auto;
+background-color: #black;
+}
+
+.block {
+  display: block;
+  margin: 0px auto;
+}
+
 #soundcloud {
   margin: 30px;
 }
@@ -21,8 +32,9 @@ th {
 #map-canvas{
   border:1px solid black;
  height: 300px;
- width: 700px;
+ width: 100%;
  margin: 0 auto;
+ margin-top: 10px;
 }
 
 #logo{
@@ -57,15 +69,15 @@ th {
 
 
 .button {
-  margin: auto;
+   margin: auto;
    border-top: 1px solid #ffffff;
    background: #000000;
    background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#000000));
-   background: -webkit-linear-gradient(top, #000000, #000000);
-   background: -moz-linear-gradient(top, #000000, #000000);
-   background: -ms-linear-gradient(top, #000000, #000000);
-   background: -o-linear-gradient(top, #000000, #000000);
-   padding: 14px 28px;
+   background: -webkit-linear-gradient(top, #99173C, #99173C);
+   background: -moz-linear-gradient(top, #99173C, #99173C);
+   background: -ms-linear-gradient(top, #99173C, #99173C);
+   background: -o-linear-gradient(top, #99173C, #99173C);
+   padding: 14px;
    -webkit-border-radius: 21px;
    -moz-border-radius: 21px;
    border-radius: 21px;
