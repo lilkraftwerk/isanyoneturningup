@@ -3,6 +3,7 @@ get '/' do
 end
 
 get '/getmore' do
+
   client = make_twitter
   client.search("turnup").take(200).collect do |tweet|
     if tweet.geo?

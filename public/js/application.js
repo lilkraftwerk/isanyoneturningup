@@ -36,9 +36,6 @@ function placeMarker(position, title) {
 }
 
 function placeTurnup(marker, content) {
-    // $("#tweetbox").hide().html(content).delay(1000).fadeIn("fast");
-    // $("#tweetbox").html(content).delay(1000);
-    // $("#tweetbox").fadeIn('fast');
     google.maps.event.addListener(marker, 'click', function() {
         $("#tweetbox").html(content);
 
@@ -73,13 +70,13 @@ looping = null;
 
 function turntLoop() {
     if (!looping) {
-        $('#turnloop').html("cancel loop");
+        $('#turnloop').html("#turndown");
 
         looping = setInterval(function() {
             getTweet()
         }, 5000);
     } else {
-        $('#turnloop').html("start loop");
+        $('#turnloop').html("#turnup");
         window.clearInterval(looping);
         looping = null;
     }
