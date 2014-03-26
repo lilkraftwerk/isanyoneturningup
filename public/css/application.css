@@ -13,15 +13,15 @@ th {
   margin: 0 auto;
 }
 
+
 #soundcloud {
   margin: 30px;
 }
 
 #map-canvas{
-  margin-top: 10px;
   border:1px solid black;
- height: 350px;
- width: 600px;
+ height: 300px;
+ width: 700px;
  margin: 0 auto;
 }
 
@@ -29,6 +29,10 @@ th {
   height: 100px;
   width: 500px;
   margin: 0 auto;
+}
+
+#tweetbox {
+  height: 250px;
 }
 
 #content {
