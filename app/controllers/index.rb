@@ -2,7 +2,7 @@ get '/' do
   erb :index
 end
 
-get '/deleteolder'
+get '/deleteolder' do
   @tweets = Tweet.where(["created_at < ?", 1.day.ago])
   delete_older_tweets(@tweets)
   "#{@tweets.count.to_s} done for!"
