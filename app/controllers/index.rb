@@ -19,5 +19,5 @@ get '/getmore' do
 end
 
 get '/tweet' do
-  Tweet.first(:order => "RANDOM()").to_json
+  Tweet.last(:order => "RANDOM()").to_json
 end
