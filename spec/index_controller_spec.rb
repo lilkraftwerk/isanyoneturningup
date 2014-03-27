@@ -3,16 +3,16 @@ require 'spec_helper'
 describe "IndexController (this is a skeleton controller test!)" do
 
   describe 'get all bands' do
-    it 'should see all bands' do
-      get "/bands"
+    it 'should get index page' do
+      get "/"
       expect(last_response).to be_ok
     end
   end
 
   describe 'create a new band' do
-    band_name = 'chromatics'
+    tweet_id = '111222333444555'
     new_params = {
-        name: band_name
+        tweet_id: tweet_id
       }
     new_session = {
       'rack.session' => {
@@ -21,7 +21,7 @@ describe "IndexController (this is a skeleton controller test!)" do
     }
     it 'should add a new band' do
       expect{
-        post('/bands', new_params, new_session)
+        post('/getmore')
       }.to change(Band, :count).by(1)
       last_response.should be_redirect
     end

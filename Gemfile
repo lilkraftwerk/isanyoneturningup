@@ -12,6 +12,7 @@ gem 'sinatra-contrib'
 gem 'thin'
 gem 'twitter'
 gem 'tweetstream'
+gem 'simplecov'
 
 gem 'activesupport'
 gem 'activerecord'
