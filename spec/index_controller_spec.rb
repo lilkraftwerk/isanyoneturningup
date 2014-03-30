@@ -1,10 +1,10 @@
-require 'spec_helper'
+require_relative './spec_helper'
 
 describe "IndexController (this is a skeleton controller test!)" do
 
   describe 'get all bands' do
     it 'should get index page' do
-      get "/"
+      get "/asdfa"
       expect(last_response).to be_ok
     end
   end
