@@ -11,7 +11,7 @@ get '/doit' do
   deleted_count = @tweets.count
   delete_older_tweets(@tweets)
   @new_count = Tweet.count
-  "#TurnDown4What: from #{first_count} to #{second_count}. #{@tweets.count} deleted. From #{@count} to #{@new_count}"
+  "#TurnDown4What: from #{first_count} to #{second_count}. #{deleted_count} deleted. From #{@count} to #{@new_count}"
 end
 
 get '/tweet' do
