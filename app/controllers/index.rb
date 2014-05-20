@@ -7,7 +7,7 @@ get '/doit' do
   more_tweets
   second_count = Tweet.count
   @count = Tweet.count
-  @tweets = Tweet.where(["created_at < ?", 2.days.ago])
+  @tweets = Tweet.where(["created_at < ?", 5.days.ago])
   deleted_count = @tweets.count
   delete_older_tweets(@tweets)
   @new_count = Tweet.count
